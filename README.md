@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📸 YukPhoto - Web Photobooth Aesthetic
 
-## Getting Started
+![YukPhoto Preview](/public/images/yukphoto-banner.jpg) <!-- Ganti dengan banner asli jika ada -->
 
-First, run the development server:
+**YukPhoto** adalah web aplikasi photobooth gratis bernuansa pastel (Korean-style aesthetic) yang memungkinkan kamu berfoto seru dengan berbagai filter dan layout bingkai (frame) polaroid. Aplikasi ini dibuat **100% Client-Side**, yang berarti semua foto diproses langsung di *browser* kamu dan **tidak pernah disimpan di server mana pun**, sehingga privasi sangat terjamin.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Fitur Utama
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **🎨 8+ Filter Aesthetic**: Mulai dari Original, Black & White, Sepia, Warm, Cool, Vintage, Fade, hingga Cinematic.
+- **🖼️ 4 Layout Frame**: Pilih frame favoritmu (Polaroid 1 Foto, Strip 3 Foto, Strip 4 Foto, atau Grid 2x2).
+- **👥 Live Multiplayer (Sesi Foto Bareng)**: Bikin *room* dengan kode 6 digit dan undang temanmu! Layar akan terbelah (Split-Screen) dan kalian bisa foto bareng secara *real-time* meskipun berbeda device/tempat (menggunakan teknologi WebRTC P2P).
+- **🔒 100% Aman & Private**: Tanpa *database*. Menggunakan Canvas API dan WebRTC murni sehingga jejak fotomu otomatis hilang saat tab ditutup.
+- **📱 Responsive UI**: Tampilan cantik dan optimal baik di Desktop, Tablet, maupun Smartphone.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Teknologi yang Digunakan
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Realtime / P2P**: [PeerJS](https://peerjs.com/) (WebRTC)
+- **Image Processing**: Native HTML5 Canvas API
 
-## Learn More
+## 🚀 Menjalankan Secara Lokal (Local Development)
 
-To learn more about Next.js, take a look at the following resources:
+Ikuti langkah-langkah di bawah ini untuk menjalankan YukPhoto di komputermu:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone repository ini**
+   ```bash
+   git clone https://github.com/username/yukphoto.git
+   cd yukphoto
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies**
+   ```bash
+   npm install
+   # atau
+   yarn install
+   # atau
+   pnpm install
+   ```
 
-## Deploy on Vercel
+3. **Jalankan Development Server**
+   ```bash
+   npm run dev
+   # atau
+   yarn dev
+   # atau
+   pnpm dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Buka di Browser**
+   Buka [http://localhost:3000](http://localhost:3000) dan mulai berfoto! 📸
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 Deployment
+
+Karena aplikasi ini sepenuhnya *client-side* (Static/SSG), kamu bisa men-deploy-nya dengan sangat mudah dan **GRATIS** ke [Vercel](https://vercel.com/) atau [Netlify](https://www.netlify.com/).
+
+### Deploy ke Vercel (Rekomendasi)
+Pilih salah satu cara:
+1. Hubungkan repository GitHub kamu ke Vercel Dashboard, Vercel akan otomatis mengenali ini sebagai project Next.js.
+2. Atau jalankan command via Vercel CLI:
+   ```bash
+   npx vercel
+   ```
+
+## 🤝 Kontribusi
+
+Saran, perbaikan *bug*, atau penambahan fitur (seperti desain frame baru) sangat diterima! Silakan lakukan *Fork* repository ini dan buat *Pull Request*.
+
+---
+Dibuat dengan ❤️ untuk mengabadikan momen serumu!
