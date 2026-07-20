@@ -26,8 +26,8 @@ Ikuti langkah-langkah di bawah ini untuk menjalankan YukPhoto di komputermu:
 
 1. **Clone repository ini**
    ```bash
-   git clone https://github.com/username/yukphoto.git
-   cd yukphoto
+   git clone https://github.com/Rifaiiii04/yukphoto-photobooth.git
+   cd yukphoto-photobooth
    ```
 
 2. **Install dependencies**
