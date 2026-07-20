@@ -1,65 +1,75 @@
-import Image from "next/image";
+/* ============================================================
+   LANDING PAGE
+   Halaman utama YukPhoto.
+   Sections: Navbar → Hero → How It Works → Features → CTA → Footer
+   Server component (tidak perlu 'use client').
+   ============================================================ */
+
+import Link from 'next/link';
+import { Camera } from 'lucide-react';
+import Hero from '@/app/components/landing/Hero';
+import HowItWorks from '@/app/components/landing/HowItWorks';
+import Features from '@/app/components/landing/Features';
+import Footer from '@/app/components/landing/Footer';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <div className="flex flex-col flex-1 min-h-screen">
+      {/* Navigation bar */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[var(--color-bg)]/80 backdrop-blur-md border-b border-[var(--color-border)]">
+        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3.5">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-[var(--color-primary)] flex items-center justify-center">
+              <Camera size={16} className="text-white" />
+            </div>
+            <span className="text-xl font-bold text-[var(--color-text)]">
+              Yuk<span className="text-[var(--color-primary)]">Photo</span>
+            </span>
+          </Link>
+          <div className="flex items-center gap-4">
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#fitur"
+              className="hidden sm:inline text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-text)] transition-colors"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Fitur
+            </a>
+            <Link
+              href="/photobooth"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--color-primary)] text-white text-sm font-medium hover:bg-[var(--color-primary-hover)] transition-colors"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              <Camera size={16} />
+              Mulai Foto
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      </nav>
+
+      {/* Main content */}
+      <main className="flex-1">
+        <Hero />
+        <HowItWorks />
+        <Features />
+
+        {/* Final CTA Section */}
+        <section className="w-full px-6 py-16 md:py-20">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text)] mb-4">
+              Siap Buat Kenangan Baru?
+            </h2>
+            <p className="text-[var(--color-text-secondary)] mb-8 max-w-md mx-auto">
+              Foto aesthetic gratis tanpa ribet. Langsung buka, foto, download. Tidak perlu daftar!
+            </p>
+            <Link href="/photobooth">
+              <button className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[var(--color-primary)] text-white text-lg font-semibold hover:bg-[var(--color-primary-hover)] transition-all duration-200 hover:scale-105 cursor-pointer shadow-lg">
+                <Camera size={22} />
+                Mulai Foto Sekarang
+              </button>
+            </Link>
+          </div>
+        </section>
       </main>
+
+      <Footer />
     </div>
   );
 }
